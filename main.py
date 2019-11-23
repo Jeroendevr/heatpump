@@ -14,7 +14,7 @@ def electricity_price() :
     price_elec_levering = 0.07156
     price_elec_ODE = 0.02287
     price_elec_EB = 0.11934
-    
+
     return price_elec_EB + price_elec_ODE + price_elec_levering
 
 def gas_price():
@@ -32,24 +32,19 @@ def calculate():
     COP_min = 2.7
     COP_plus = 4.6
     COP_diff_K = (COP_plus - COP_min) / Delta_T
-    print(Delta_T)
     OP_COP = optimal_COP()
-    
-    for x in range(T_plus, -20,  -1):
-        if COP_plus - (x*COP_diff_Ki) =>
-        
-        
 
-    
-    
-    
-    
-    
-    return 
+    for x in range(T_plus, -20,  -1):
+        y = abs(T_plus - x)
+        print ("Temp to check " + str(x) + "  "+ str(COP_plus - (y*COP_diff_K)) + "    "+ str(OP_COP))
+        if (COP_plus - (y*COP_diff_K)) <= OP_COP:
+            print("optimal COP is at " + str(x+1))
+            break
 
 def optimal_COP() -> float:
     opt = electricity_price() / gas_price() * gas_energy()
-    print("Optimal COP is " + str(opt))
-    
+    # print("Optimal COP is " + str(opt))
+    return opt
+
 calculate()
 # print(electricity_price(), gas_price())
