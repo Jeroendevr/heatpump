@@ -12,18 +12,19 @@ def gas_energy() -> float:
 def electricity_price() :
     # Total price for one kW/h
     price_elec_levering = 0.07156
-    price_elec_ODE = 0.030371
-    price_elec_EB = 0.121726
+    price_elec_ODE = 0.033
+    price_elec_EB = 0.118217
 
     return price_elec_EB + price_elec_ODE + price_elec_levering
 
 def gas_price():
     # Total price for one m3
     price_gas_levering = 0.27350
-    price_gas_EB = 0.3617779
-    price_gas_ODE = 0.084337
+    price_gas_EB = 0.40293
+    price_gas_ODE = 0.0938
+    price_gas_regio = 0.00771
 
-    return price_gas_levering + price_gas_EB + price_gas_ODE
+    return price_gas_levering + price_gas_EB + price_gas_ODE + price_gas_regio
 
 def calculate():
     T_min = -7
